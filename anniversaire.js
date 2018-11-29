@@ -27,7 +27,19 @@ $('#mess2').on('click',function()
 $('#mess3').on('click',function()
 {
   var bloc1= $("#videoSon").addClass("animation");
-  // Animation JS + insertion vidéo & son
+  $('#mess1').addClass('moveEffect');
+  
+  
+  setTimeout(function(){
+    $('#mess2').addClass('moveEffect');
+  }, 300);
+
+  setTimeout(function(){
+    $('#mess3').addClass('moveEffect');
+  }, 500);
+  setTimeout(function(){
+    $('iframe').addClass('iframe-move');
+  }, 700);
 });
 
 

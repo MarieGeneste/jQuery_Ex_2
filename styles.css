@@ -17,6 +17,7 @@ background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   font-family: 'Text Me One', sans-serif;
+  overflow: hidden;
 }
 
 canvas
@@ -56,6 +57,7 @@ h1
   position: relative;
   animation: LoadMess 0.3s;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 #mess2
@@ -65,6 +67,7 @@ h1
   opacity: 0.6;
   animation: LoadMess 0.3s;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 #mess3
@@ -74,12 +77,30 @@ h1
   animation: LoadMess 0.3s;
   opacity: 0.6;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
+.moveEffect{
+  transform: translateX(-200px);
+  opacity: 0 !important;
+  transition: all 0.3s ease-in-out;
+}
 .launchAnimH1 {
   animation: h1zoom 0.3s;
 }
 
+iframe {
+  display: none;
+  opacity: 0.5;
+  position:relative;
+  transition: all 0.3s ease-in-out;
+
+}
+.iframe-move {
+  display: initial;
+  top: -250px;
+  opacity: 1;
+}
 @keyframes h1zoom {
   0% {
     transform: scale(1);
@@ -91,19 +112,6 @@ h1
     transform: scale(1);
   }
 }
-
-@keyframes LoadMess {
-  from {
-    opacity: 0%;
-    top: 100px;
-  },
-
-  to {
-    opacity: 100%;
-    top: 0;
-  }
-}
-
 
 /* Ballons */
 .ballon {
@@ -161,4 +169,15 @@ h1
   66% { transform: translateX(3px);}
   86% { transform: translateX(-10px);}
   100% { transform: translateX(0px);}
+}
+
+@keyframes removeMess {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: -100px;
+    opacity: 0;
+  }
 }
