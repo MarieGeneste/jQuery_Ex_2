@@ -18,7 +18,8 @@ $('#mess2').on('click',function()
   var bloc1= $("#mess3").addClass("anim");
   bloc1.html('<p>Joyeux Anniversaire !!</p>');
   $('.wind').remove();
-  $('#audioFirework').play();
+  var audio = new Audio('musique/fireworks.wav');
+  audio.play();
   fireworks();
 
 });
