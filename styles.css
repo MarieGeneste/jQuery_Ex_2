@@ -16,6 +16,7 @@ background-repeat: no-repeat;
   color: rgb(0, 25, 36);
   width: 100vw;
   height: 100vh;
+  font-family: 'Text Me One', sans-serif;
 }
 
 canvas
@@ -25,12 +26,14 @@ canvas
 
 h1
 {
-  background-color: #96ceb4;
+  background-color: rgba(0,0,0,0.3);
   font-weight: bold;
   text-transform: uppercase;
   margin: 40px;
   padding: 40px;
-  border: 1px solid black;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .anim
@@ -42,7 +45,6 @@ h1
   padding: 10px;
   width: 40%;
   height: 40px;
-  /* border: 1px solid red; */
   margin-bottom: 40px;
   border-radius: 3px;
 }
@@ -50,14 +52,113 @@ h1
 #mess1
 {
   background-color: #ffeead;
+  opacity: 0.6;
+  position: relative;
+  animation: LoadMess 0.3s;
+  cursor: pointer;
 }
 
 #mess2
 {
   background-color: #ffcc5c;
+  position: relative;
+  opacity: 0.6;
+  animation: LoadMess 0.3s;
+  cursor: pointer;
 }
 
 #mess3
 {
   background-color: #ff6f69;
+  position: relative;
+  animation: LoadMess 0.3s;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.launchAnimH1 {
+  animation: h1zoom 0.3s;
+}
+
+@keyframes h1zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes LoadMess {
+  from {
+    opacity: 0%;
+    top: 100px;
+  },
+
+  to {
+    opacity: 100%;
+    top: 0;
+  }
+}
+
+
+/* Ballons */
+.ballon {
+  position: absolute;
+  width: 75px;
+  height: 155.5px;
+  bottom: -160px;
+  transform-origin: 37.5px 0px;
+}
+
+.yellow {
+  will-change: transform;
+  animation: float 5s 0s linear infinite;
+  left: 10%;
+}
+
+.green {
+  will-change: transform;
+  animation: float 5s 3s linear infinite;
+  left: 50%;
+}
+
+.blue {
+  will-change: transform;
+  animation: float 5s 4s linear infinite;
+  right: 5%;
+}
+
+.wind {
+  will-change: transform;
+  overflow: hidden;
+  width: 90vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.parentwind {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  animation: wind 10s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0px) rotate(5deg);}
+  100% { transform: translateY(-200vh) rotate(0deg);}
+}
+
+@keyframes wind {
+  0% { transform: translateX(0px);}
+  10% { transform: translateX(10px);}
+  30% { transform: translateX(-5px);}
+  66% { transform: translateX(3px);}
+  86% { transform: translateX(-10px);}
+  100% { transform: translateX(0px);}
 }

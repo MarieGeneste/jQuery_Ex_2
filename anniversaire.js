@@ -9,6 +9,7 @@ $('#mess1').on('click',function()
 {
   var bloc1= $("#mess2").addClass("anim");
   bloc1.html('<p>Nous n\'avons pas oublié</p>');
+  $('h1').addClass('launchAnimH1');
 
 });
 
@@ -16,7 +17,10 @@ $('#mess2').on('click',function()
 {
   var bloc1= $("#mess3").addClass("anim");
   bloc1.html('<p>Joyeux Anniversaire !!</p>');
+  $('.wind').remove();
+  $('#audioFirework').play();
   fireworks();
+
 });
 
 $('#mess3').on('click',function()
